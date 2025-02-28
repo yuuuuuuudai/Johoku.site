@@ -1,0 +1,93 @@
+{\rtf1\ansi\ansicpg932\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="ja">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Chevron Animation</title>\
+    <style>\
+        body \{\
+            display: flex;\
+            justify-content: center;\
+            align-items: center;\
+            position: absolute;\
+            width: 100%;\
+            height: 100%;\
+            background: #333;\
+        \}\
+        .container \{\
+            position: relative;\
+            width: 24px;\
+            height: 24px;\
+        \}\
+        .chevron \{\
+            position: absolute;\
+            width: 28px;\
+            height: 8px;\
+            opacity: 0;\
+            transform: scale3d(0.5, 0.5, 0.5);\
+            animation: move 3s ease-out infinite;\
+        \}\
+        .chevron:first-child \{\
+            animation: move 3s ease-out 1s infinite;\
+        \}\
+        .chevron:nth-child(2) \{\
+            animation: move 3s ease-out 2s infinite;\
+        \}\
+        .chevron:before,\
+        .chevron:after \{\
+            content: ' ';\
+            position: absolute;\
+            top: 0;\
+            height: 100%;\
+            width: 51%;\
+            background: #fff;\
+        \}\
+        .chevron:before \{\
+            left: 0;\
+            transform: skew(0deg, 30deg);\
+        \}\
+        .chevron:after \{\
+            right: 0;\
+            width: 50%;\
+            transform: skew(0deg, -30deg);\
+        \}\
+        @keyframes move \{\
+            25% \{ opacity: 1; \}\
+            33% \{ opacity: 1; transform: translateY(30px); \}\
+            67% \{ opacity: 1; transform: translateY(40px); \}\
+            100% \{ opacity: 0; transform: translateY(55px) scale3d(0.5, 0.5, 0.5); \}\
+        \}\
+        .text \{\
+            display: block;\
+            margin-top: 75px;\
+            font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;\
+            font-size: 12px;\
+            color: #fff;\
+            text-transform: uppercase;\
+            white-space: nowrap;\
+            opacity: .25;\
+            animation: pulse 2s linear alternate infinite;\
+        \}\
+        @keyframes pulse \{\
+            to \{ opacity: 1; \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <div class="container">\
+        <div class="chevron"></div>\
+        <div class="chevron"></div>\
+        <div class="chevron"></div>\
+        <span class="text">Scroll down</span>\
+        <a class="text" href="https://naegele.it">See it in action</a>\
+    </div>\
+</body>\
+</html>\
+}
